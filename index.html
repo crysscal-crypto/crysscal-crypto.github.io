@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightwave Studio – App Android: IntegroAgents e My VibeOn</title>
+<meta name="description" content="Nightwave Studio sviluppa app Android: IntegroAgents, il CRM per agenti di commercio, e My VibeOn, radio e musica.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nightwave Studio – App Android">
+<meta property="og:description" content="IntegroAgents, il CRM offline per agenti di commercio, e My VibeOn, radio e musica.">
+<meta property="og:url" content="https://crysscal-crypto.github.io/">
+<meta property="og:locale" content="it_IT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Impianto: una colonna, fondo notte, schede app affiancate su desktop. */
+:root{
+  --notte:#05070f;
+  --notte-2:#0b0f1d;
+  --carta:#121829;
+  --linea:#1f2740;
+  --testo:#e8ecf7;
+  --tenue:#97a1bb;
+  --ciano:#49d0f0;
+  --blu:#2f6bff;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--notte);
+  color:var(--testo);
+  font:16px/1.65 "IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:var(--ciano)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ciano);outline-offset:3px}
+
+header{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(47,107,255,.40), transparent 60%),
+    radial-gradient(700px 380px at 92% 10%, rgba(73,208,240,.22), transparent 60%),
+    linear-gradient(180deg,var(--notte-2),var(--notte));
+  border-bottom:1px solid var(--linea);
+  padding:72px 0 64px;
+}
+.marchio{display:flex;align-items:center;gap:14px;margin-bottom:38px}
+.sigla{
+  width:52px;height:52px;border-radius:14px;flex:0 0 52px;
+  background:linear-gradient(135deg,#5ee7f5,#2f6bff);
+  display:grid;place-items:center;
+  font:800 23px/1 Archivo,sans-serif;color:#05070f;letter-spacing:-.5px;
+}
+.marchio span{font:700 22px/1 Archivo,sans-serif;letter-spacing:.2px}
+h1{
+  font:800 clamp(34px,5.4vw,56px)/1.08 Archivo,sans-serif;
+  margin:0 0 18px;text-wrap:balance;max-width:17ch;
+}
+h1 em{font-style:normal;color:var(--ciano)}
+.occhiello{
+  display:inline-block;font:600 12px/1 Archivo,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ciano);
+  border:1px solid rgba(73,208,240,.45);border-radius:20px;padding:8px 14px;margin-bottom:22px;
+}
+.intro{color:var(--tenue);font-size:18px;max-width:60ch;margin:0}
+
+h2{font:700 24px/1.2 Archivo,sans-serif;margin:0 0 8px}
+section{padding:64px 0}
+.sez-intro{color:var(--tenue);margin:0 0 30px;max-width:62ch}
+
+.griglia{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.app{
+  background:var(--carta);border:1px solid var(--linea);border-radius:18px;
+  padding:26px;display:flex;flex-direction:column;gap:12px;
+}
+.app h3{font:700 21px/1.2 Archivo,sans-serif;margin:0}
+.app .ruolo{font:600 12px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ciano);margin:0}
+.app p{margin:0;color:var(--tenue);font-size:15px}
+.app ul{margin:4px 0 0;padding-left:20px;color:var(--tenue);font-size:15px}
+.app li{margin-bottom:5px}
+.app li::marker{color:var(--blu)}
+.spinta{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.bottone{
+  display:inline-block;background:var(--blu);color:#fff;text-decoration:none;
+  font:600 15px Archivo,sans-serif;padding:12px 22px;border-radius:12px;
+}
+.bottone:hover{filter:brightness(1.12)}
+.bottone.vuoto{background:transparent;color:var(--ciano);border:1px solid rgba(73,208,240,.5)}
+
+.valori{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.valore{border-left:2px solid var(--blu);padding-left:16px}
+.valore h3{font:700 16px/1.3 Archivo,sans-serif;margin:0 0 6px}
+.valore p{margin:0;color:var(--tenue);font-size:15px}
+
+footer{border-top:1px solid var(--linea);padding:40px 0 56px;color:var(--tenue);font-size:14.5px}
+footer p{margin:0 0 8px}
+.legale{margin-top:22px;font-size:13.5px;opacity:.8}
+@media (max-width:520px){ header{padding:52px 0 46px} section{padding:48px 0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="marchio">
+      <div class="sigla">NW</div>
+      <span>Nightwave Studio</span>
+    </div>
+    <p class="occhiello">App Android</p>
+    <h1>Software per <em>chi lavora</em> fuori dall'ufficio</h1>
+    <p class="intro">
+      Nightwave Studio è lo studio di sviluppo di Cristian Caliumi, agente di commercio
+      e sviluppatore. Le app nascono da problemi veri incontrati sul campo, non da una
+      riunione di marketing.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Le app</h2>
+    <p class="sez-intro">Disponibili su Google Play, sviluppate e mantenute in Italia.</p>
+
+    <div class="griglia">
+
+      <article class="app">
+        <p class="ruolo">CRM per agenti</p>
+        <h3>IntegroAgents</h3>
+        <p>
+          Il gestionale per agenti di commercio plurimandatari. Funziona senza internet:
+          i dati restano sul telefono, nessun account, nessun server.
+        </p>
+        <ul>
+          <li>Anagrafica clienti e portafoglio</li>
+          <li>Giro visita ordinato dal più vicino</li>
+          <li>Fatturato e provvigioni per mandato</li>
+          <li>Spese di lavoro e backup in Excel</li>
+        </ul>
+        <div class="spinta">
+          <a class="bottone" href="https://play.google.com/store/apps/details?id=com.integroagents.crm" target="_blank" rel="noopener">Vedi su Google Play</a>
+        </div>
+      </article>
+
+      <article class="app">
+        <p class="ruolo">Radio e musica</p>
+        <h3>My VibeOn</h3>
+        <p>
+          Radio FM e stazioni online in un'unica app, con lettore musicale integrato.
+          Per chi passa ore in auto e vuole tutto sotto un tasto solo.
+        </p>
+        <ul>
+          <li>Radio italiane e internazionali</li>
+          <li>Lettore per la musica sul telefono</li>
+          <li>Preferiti e ripresa dell'ascolto</li>
+        </ul>
+        <div class="spinta">
+          <a class="bottone" href="https://play.google.com/store/apps/details?id=com.cristian.vibeon" target="_blank" rel="noopener">Vedi su Google Play</a>
+          <a class="bottone vuoto" href="https://play.google.com/store/apps/dev?id=6212052345369864200" target="_blank" rel="noopener">Tutte le app dello studio</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--notte-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)">
+  <div class="wrap">
+    <h2>Come lavoriamo</h2>
+    <p class="sez-intro">Tre regole che valgono per ogni app che esce da qui.</p>
+    <div class="valori">
+      <div class="valore">
+        <h3>I dati sono dell'utente</h3>
+        <p>Niente account obbligatori, niente dati spediti a server altrui. Quello che inserisci resta sul tuo dispositivo e lo puoi esportare quando vuoi.</p>
+      </div>
+      <div class="valore">
+        <h3>Deve funzionare senza campo</h3>
+        <p>Le app sono pensate per chi sta in strada, in magazzino, in zone industriali. Se serve la connessione per lavorare, è un'app sbagliata.</p>
+      </div>
+      <div class="valore">
+        <h3>Niente funzioni tolte</h3>
+        <p>Quello che funziona non sparisce con l'aggiornamento successivo. Chi usa un'app tutti i giorni non deve reimparare dove sono le cose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--testo)">Nightwave Studio</strong> — Ditta Caliumi Cristian</p>
+    <p>Carpi (MO), Italia</p>
+    <p>Contatti: <a href="mailto:caliumicristian@gmail.com">caliumicristian@gmail.com</a></p>
+    <p class="legale">
+      Norme sulla privacy di IntegroAgents:
+      <a href="https://sites.google.com/view/integroagents-privacy/home-page" target="_blank" rel="noopener">leggi qui</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
